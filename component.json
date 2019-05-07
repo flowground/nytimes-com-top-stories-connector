@@ -1,0 +1,56 @@
+{
+    "title": "Top Stories",
+    "description": "The Top Stories API provides lists of articles and associated images by section.",
+    "docsUrl": "http://developer.nytimes.com/",
+    "url": "https://api.apis.guru/v2/specs/nytimes.com/top_stories/2.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "http://api.nytimes.com/svc/topstories/v2",
+                    "https://api.nytimes.com/svc/topstories/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "apikey": {
+                "label": "api-key (apikey)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get__section___format_": {
+            "main": "./lib/actions/get__section___format_.js",
+            "title": "Top Stories",
+            "description": "The Top Stories API returns a list of articles and associated images currently on the specified section.  Support JSON and JSONP.\n",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get__section___format_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

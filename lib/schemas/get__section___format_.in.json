@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "section": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "home",
+                "opinion",
+                "world",
+                "national",
+                "politics",
+                "upshot",
+                "nyregion",
+                "business",
+                "technology",
+                "science",
+                "health",
+                "sports",
+                "arts",
+                "books",
+                "movies",
+                "theater",
+                "sundayreview",
+                "fashion",
+                "tmagazine",
+                "food",
+                "travel",
+                "magazine",
+                "realestate",
+                "automobiles",
+                "obituaries",
+                "insider"
+            ]
+        },
+        "format": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "json",
+                "jsonp"
+            ]
+        },
+        "callback": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
